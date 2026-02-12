@@ -1,0 +1,9 @@
+
+{
+  "name": "Nova Portfolio - Premium Developer Identity",
+  "description": "A modern, high-performance developer portfolio featuring case studies, career timeline, and an interactive personal signature terminal.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
