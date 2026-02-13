@@ -1,52 +1,50 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Terminal as TerminalIcon } from "lucide-react";
 
-const Terminal: React.FC = () => {
-  const [lines, setLines] = useState<string[]>([]);
+const Terminal = () => {
+  const [lines, setLines] = useState([]);
   const indexRef = useRef(0);
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef(null);
 
-  const fullText: string[] = [
+  const fullText = [
     "$ whoami",
-    "Alex Rivera",
+    "Chouaib BEN-CHOUAIB",
     "$ status",
     "Engineering high-performance apps",
     "$ location",
-    "Berlin, Germany",
+    "Morocco",
     "$ stack --primary",
-    "React, TypeScript, Node.js",
+    "React, JavaScript, Node.js",
     "$ exit"
   ];
 
   useEffect(() => {
-    // Prevent duplicate intervals (React 18 StrictMode fix)
+    
     if (intervalRef.current) {
       window.clearInterval(intervalRef.current);
     }
 
     intervalRef.current = window.setInterval(() => {
-      const currentIndex = indexRef.current;
+      const i = indexRef.current;
 
-      if (currentIndex < fullText.length) {
-        const nextLine = fullText[currentIndex];
+      if (i < fullText.length) {
+        const nextLine = fullText[i];
 
         if (typeof nextLine === "string") {
           setLines((prev) => [...prev, nextLine]);
         }
 
-        indexRef.current = currentIndex + 1;
+        indexRef.current = i + 1;
       } else {
-        if (intervalRef.current) {
           window.clearInterval(intervalRef.current);
           intervalRef.current = null;
         }
-      }
+      
     }, 800);
 
     return () => {
-      if (intervalRef.current) {
-        window.clearInterval(intervalRef.current);
-      }
+      if (intervalRef.current) window.clearInterval(intervalRef.current);
+      intervalRef.current = null;
     };
   }, []);
 
