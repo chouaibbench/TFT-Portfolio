@@ -4,11 +4,7 @@ import { PROJECTS } from '../constants';
 import ProjectCarousel from '../components/ProjectCarousel';
 import { Sparkles } from 'lucide-react';
 
-interface ProjectsProps {
-  onNavigate: (view: string) => void;
-}
-
-const Projects: React.FC<ProjectsProps> = ({ onNavigate }) => {
+const Projects = ({ onNavigate }) => {
   return (
     <div className="min-h-screen pt-32 pb-24 flex flex-col">
       <div className="max-w-7xl mx-auto px-6 mb-12 space-y-4">

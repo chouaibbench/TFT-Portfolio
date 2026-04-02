@@ -5,11 +5,7 @@ import { PROFILE, CORE_METRICS, PROJECTS } from '../constants';
 import Terminal from '../components/Terminal';
 import ProjectCard from '../components/ProjectCard';
 
-interface HomeProps {
-  onNavigate: (view: string) => void;
-}
-
-const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+const Home = ({ onNavigate }) => {
   return (
     <div className="space-y-32 pb-24">
       {/* Hero Section */}

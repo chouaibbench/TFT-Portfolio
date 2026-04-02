@@ -4,12 +4,7 @@ import { ArrowLeft, Github, ExternalLink, Cpu, Layout, Users, BarChart3 } from '
 import { PROJECTS } from '../constants';
 import ProjectAIChat from '../components/ProjectAIChat';
 
-interface CaseStudyProps {
-  projectId: string;
-  onBack: () => void;
-}
-
-const CaseStudy: React.FC<CaseStudyProps> = ({ projectId, onBack }) => {
+const CaseStudy = ({ projectId, onBack }) => {
   const project = PROJECTS.find(p => p.id === projectId);
 
   useEffect(() => {

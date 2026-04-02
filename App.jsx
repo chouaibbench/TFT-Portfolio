@@ -1,13 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import CaseStudy from './pages/CaseStudy';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Home from './pages/Home.jsx';
+import Projects from './pages/Projects.jsx';
+import CaseStudy from './pages/CaseStudy.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 
-const App: React.FC = () => {
+const App = () => {
   const [currentView, setCurrentView] = useState('home');
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const navigate = (view: string) => {
+  const navigate = (view) => {
     window.location.hash = view;
     setCurrentView(view);
   };

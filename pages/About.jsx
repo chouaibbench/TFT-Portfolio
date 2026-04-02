@@ -3,7 +3,7 @@ import React from 'react';
 import { MapPin, Calendar, Rocket, Code2, Coffee } from 'lucide-react';
 import { PROFILE, TIMELINE } from '../constants';
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <div className="pt-32 pb-24 space-y-32">
       <div className="max-w-7xl mx-auto px-6">

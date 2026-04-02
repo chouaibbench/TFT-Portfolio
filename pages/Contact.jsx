@@ -3,15 +3,14 @@ import React, { useState } from 'react';
 import { Send, Mail, MapPin, Clock, Github, Linkedin, Twitter } from 'lucide-react';
 import { PROFILE } from '../constants';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -50,9 +49,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-1">Availability</div>
-                  <div className="text-lg font-medium text-white">
-                    Mon — Fri, 9:00 - 18:00 (CET)
-                  </div>
+                  <div className="text-lg font-medium text-white">Mon — Fri, 9:00 - 18:00 (CET)</div>
                 </div>
               </div>
 
@@ -62,9 +59,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-1">Location</div>
-                  <div className="text-lg font-medium text-white">
-                    {PROFILE.location}
-                  </div>
+                  <div className="text-lg font-medium text-white">{PROFILE.location}</div>
                 </div>
               </div>
             </div>
