@@ -6,7 +6,6 @@ import CaseStudy from './pages/CaseStudy.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import PortfolioAIChat from './components/ProjectAIChat.jsx';
-import { PROFILE } from './constants';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -42,11 +41,10 @@ const App = () => {
   };
 
   return (
-    <div className="relative min-h-screen selection:bg-blue-500/30">
-      <div className="fixed inset-0 bg-mesh opacity-30 pointer-events-none"></div>
+    <div className="relative min-h-screen selection:bg-[#8b5cf6]/30">
       <div className="fixed inset-0 z-[-1] pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[80px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-violet-600/5 rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8b5cf6]/5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8b5cf6]/5 rounded-full blur-[120px]"></div>
       </div>
 
       <Navbar currentView={currentView} onNavigate={navigate} />
@@ -57,23 +55,22 @@ const App = () => {
 
       <PortfolioAIChat />
 
-      <footer className="relative z-10 py-12 border-t border-zinc-900 bg-zinc-950/50 backdrop-blur-sm">
+      <footer className="relative z-10 py-12 border-t border-zinc-900 bg-[#0a0a0a]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col items-center md:items-start gap-2">
+          <div className="flex flex-col items-center md:items-start gap-1">
             <div className="text-xl font-black tracking-tighter">
-              {PROFILE.name.split(' ')[0].toUpperCase()}<span className="text-blue-500">.</span>
+              <span className="text-white">BEN</span><span className="text-[#8b5cf6]">CHOUAIB</span>
             </div>
-            <div className="text-zinc-500 text-sm">© {new Date().getFullYear()}. Designed and engineered for the web.</div>
+            <div className="text-zinc-600 text-xs font-mono">© {new Date().getFullYear()} — All rights reserved.</div>
           </div>
-          <div className="flex items-center space-x-8 text-sm font-medium text-zinc-400">
-            <button onClick={() => navigate('home')} className="hover:text-white transition-colors">Home</button>
-            <button onClick={() => navigate('projects')} className="hover:text-white transition-colors">Projects</button>
-            <button onClick={() => navigate('about')} className="hover:text-white transition-colors">About</button>
-            <button onClick={() => navigate('contact')} className="hover:text-white transition-colors">Contact</button>
+          <div className="flex items-center gap-8 text-sm font-medium text-zinc-500">
+            {['home','projects','about','contact'].map(v => (
+              <button key={v} onClick={() => navigate(v)} className="hover:text-[#8b5cf6] transition-colors capitalize">{v}</button>
+            ))}
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">System Status: Optimal</span>
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-[#8b5cf6] animate-pulse"></div>
+            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">Available for work</span>
           </div>
         </div>
       </footer>

@@ -73,7 +73,7 @@ const PortfolioAIChat = () => {
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
         onClick={() => setIsOpen(v => !v)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-blue-500 transition-colors border-4 border-zinc-950"
+        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#8b5cf6] text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-violet-400 transition-colors border-4 border-zinc-950"
         aria-label="Toggle portfolio assistant"
       >
         {isOpen ? <X size={26} /> : <MessageSquare size={28} />}
@@ -90,7 +90,7 @@ const PortfolioAIChat = () => {
             {/* Header */}
             <div className="p-5 bg-white/5 border-b border-white/10 flex justify-between items-center shrink-0">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
+                <div className="w-10 h-10 bg-[#8b5cf6]/20 rounded-xl flex items-center justify-center text-[#8b5cf6]">
                   <Bot size={22} />
                 </div>
                 <div>
@@ -118,7 +118,7 @@ const PortfolioAIChat = () => {
                   <div
                     className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
                       msg.role === "user"
-                        ? "bg-blue-600 text-white rounded-tr-none"
+                        ? "bg-[#8b5cf6] text-white rounded-tr-none"
                         : "bg-zinc-800 text-zinc-200 rounded-tl-none"
                     }`}
                   >
@@ -137,7 +137,7 @@ const PortfolioAIChat = () => {
                     key={i}
                     type="button"
                     onClick={() => handleSelect(qa)}
-                    className="text-left text-sm px-4 py-2.5 rounded-xl bg-zinc-800 hover:bg-blue-600 text-zinc-300 hover:text-white transition-all duration-200 border border-zinc-700 hover:border-blue-500"
+                    className="text-left text-sm px-4 py-2.5 rounded-xl bg-zinc-800 hover:bg-[#8b5cf6] text-zinc-300 hover:text-white transition-all duration-200 border border-zinc-700 hover:border-[#8b5cf6]"
                   >
                     {qa.question}
                   </button>

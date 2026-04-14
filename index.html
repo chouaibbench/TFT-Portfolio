@@ -1,46 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chouaib BEN-CHOUAIB | Full-Stack Web Developer</title>
+    <title>Chouaib BEN-CHOUAIB | Full-Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { accent: '#8b5cf6' },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #09090b;
-            color: #fafafa;
-        }
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #fafafa; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         .glass {
-            background: rgba(9, 9, 11, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.08);
         }
-        .bg-mesh {
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.1) 0, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.1) 0, transparent 50%);
+        .accent { color: #8b5cf6; }
+        .accent-bg { background-color: #8b5cf6; }
+        .accent-border { border-color: #8b5cf6; }
+        .glow { box-shadow: 0 0 40px rgba(139, 92, 246, 0.15); }
+        ::selection { background: rgba(139, 92, 246, 0.25); color: #fff; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        ::selection {
-            background: rgba(59, 130, 246, 0.3);
-            color: #fff;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .marquee { animation: marquee 20s linear infinite; }
     </style>
 <script type="importmap">
 {
@@ -56,7 +56,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-zinc-950 text-zinc-50 overflow-x-hidden">
+<body class="bg-[#0a0a0a] text-zinc-50 overflow-x-hidden">
     <div id="root"></div>
 <script type="module" src="/index.jsx"></script>
 </body>
