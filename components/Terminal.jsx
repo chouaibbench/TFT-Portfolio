@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Terminal as TerminalIcon } from "lucide-react";
+import { PROFILE } from "../constants";
 
 const Terminal = () => {
   const [lines, setLines] = useState([]);
@@ -8,13 +9,13 @@ const Terminal = () => {
 
   const fullText = [
     "$ whoami",
-    "Chouaib BEN-CHOUAIB",
+    PROFILE.name,
     "$ status",
-    "Engineering high-performance apps",
+    PROFILE.title,
     "$ location",
-    "Morocco",
+    PROFILE.location,
     "$ stack --primary",
-    "React, JavaScript, Node.js",
+    PROFILE.stack.slice(0, 4).join(", "),
     "$ exit"
   ];
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Send, Mail, MapPin, Clock, Github, Linkedin, Twitter } from 'lucide-react';
 import { PROFILE } from '../constants';
@@ -70,9 +69,9 @@ const Contact = () => {
                 { icon: <Linkedin size={20}/>, label: 'LinkedIn', href: PROFILE.links.linkedin },
                 { icon: <Twitter size={20}/>, label: 'Twitter', href: '#' },
               ].map((social, i) => (
-                <a 
-                  key={i} 
-                  href={social.href} 
+                <a
+                  key={i}
+                  href={social.href}
                   className="w-12 h-12 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500 transition-all"
                   aria-label={social.label}
                 >
@@ -91,11 +90,8 @@ const Contact = () => {
                     <Send size={40} />
                   </div>
                   <h3 className="text-3xl font-bold">Message Sent!</h3>
-                  <p className="text-zinc-400">Thanks for reaching out, {formData.name || 'friend'}. I'll get back to you within 24 hours.</p>
-                  <button 
-                    onClick={() => setSubmitted(false)}
-                    className="text-blue-500 font-bold hover:underline"
-                  >
+                  <p className="text-zinc-400">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+                  <button onClick={() => setSubmitted(false)} className="text-blue-500 font-bold hover:underline">
                     Send another message
                   </button>
                 </div>
@@ -104,10 +100,8 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-bold text-zinc-400 uppercase tracking-widest ml-1">Name</label>
-                      <input 
-                        id="name"
-                        type="text" 
-                        required
+                      <input
+                        id="name" type="text" required
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -116,10 +110,8 @@ const Contact = () => {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-bold text-zinc-400 uppercase tracking-widest ml-1">Email</label>
-                      <input 
-                        id="email"
-                        type="email" 
-                        required
+                      <input
+                        id="email" type="email" required
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -129,26 +121,20 @@ const Contact = () => {
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-bold text-zinc-400 uppercase tracking-widest ml-1">Message</label>
-                    <textarea 
-                      id="message"
-                      required
-                      rows={6}
+                    <textarea
+                      id="message" required rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
+                  <button
+                    type="submit" disabled={isSubmitting}
                     className="w-full py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl flex items-center justify-center transition-all shadow-xl shadow-blue-600/20 disabled:opacity-50 group"
                   >
                     {isSubmitting ? 'Sending...' : (
-                      <>
-                        Send Message
-                        <Send size={20} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      </>
+                      <>Send Message <Send size={20} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
                     )}
                   </button>
                 </form>

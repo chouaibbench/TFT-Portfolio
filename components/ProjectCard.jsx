@@ -30,7 +30,6 @@ const ProjectCard = ({ project, onClick }) => {
               {project.title}
             </h3>
           </div>
-
           <div className="p-2 rounded-full bg-zinc-800 text-zinc-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1 group-hover:translate-x-1">
             <ArrowUpRight size={20} />
           </div>
@@ -42,14 +41,10 @@ const ProjectCard = ({ project, onClick }) => {
 
         <div className="flex flex-wrap gap-2">
           {(project.stack || []).slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 text-[10px] font-medium bg-zinc-800 text-zinc-300 rounded-full border border-zinc-700"
-            >
+            <span key={tag} className="px-3 py-1 text-[10px] font-medium bg-zinc-800 text-zinc-300 rounded-full border border-zinc-700">
               {tag}
             </span>
           ))}
-
           {(project.stack || []).length > 3 && (
             <span className="px-3 py-1 text-[10px] font-medium bg-zinc-800 text-zinc-300 rounded-full border border-zinc-700">
               +{project.stack.length - 3}

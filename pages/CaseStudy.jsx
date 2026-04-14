@@ -1,22 +1,18 @@
-
 import React, { useEffect } from 'react';
 import { ArrowLeft, Github, ExternalLink, Cpu, Layout, Users, BarChart3 } from 'lucide-react';
 import { PROJECTS } from '../constants';
-import ProjectAIChat from '../components/ProjectAIChat';
 
 const CaseStudy = ({ projectId, onBack }) => {
   const project = PROJECTS.find(p => p.id === projectId);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [projectId]);
+  useEffect(() => { window.scrollTo(0, 0); }, [projectId]);
 
   if (!project) return <div>Project not found</div>;
 
   return (
     <div className="pt-32 pb-24 relative">
       <div className="max-w-7xl mx-auto px-6 space-y-20">
-        <button 
+        <button
           onClick={onBack}
           className="group flex items-center space-x-2 text-zinc-400 hover:text-white transition-colors"
         >
@@ -36,12 +32,10 @@ const CaseStudy = ({ projectId, onBack }) => {
 
             <div className="flex flex-wrap gap-4">
               <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-zinc-950 rounded-xl font-bold flex items-center hover:bg-blue-500 hover:text-white transition-all shadow-xl shadow-white/5">
-                <ExternalLink size={20} className="mr-2" />
-                Live Demo
+                <ExternalLink size={20} className="mr-2" /> Live Demo
               </a>
               <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-zinc-900 text-white rounded-xl font-bold border border-zinc-800 flex items-center hover:bg-zinc-800 transition-all">
-                <Github size={20} className="mr-2" />
-                View Source
+                <Github size={20} className="mr-2" /> View Source
               </a>
             </div>
 
@@ -61,7 +55,7 @@ const CaseStudy = ({ projectId, onBack }) => {
           </div>
         </div>
 
-        {/* Breakdown Sections */}
+        {/* Breakdown */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-20 border-t border-zinc-800">
           <div className="space-y-4">
             <div className="flex items-center space-x-3 text-blue-500 mb-2">
@@ -86,12 +80,12 @@ const CaseStudy = ({ projectId, onBack }) => {
           </div>
         </div>
 
-        {/* Tech Stack Focus */}
+        {/* Tech Stack */}
         <div className="py-20 bg-zinc-900/50 rounded-3xl p-12 border border-zinc-800 space-y-12">
           <div className="text-center space-y-4">
-             <BarChart3 className="mx-auto text-blue-500" size={32} />
-             <h3 className="text-3xl font-bold">Technology Stack</h3>
-             <p className="text-zinc-500">Carefully selected tools to ensure scalability and developer velocity.</p>
+            <BarChart3 className="mx-auto text-blue-500" size={32} />
+            <h3 className="text-3xl font-bold">Technology Stack</h3>
+            <p className="text-zinc-500">Carefully selected tools to ensure scalability and developer velocity.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {project.stack.map(tech => (
@@ -102,9 +96,6 @@ const CaseStudy = ({ projectId, onBack }) => {
           </div>
         </div>
       </div>
-
-      {/* AI Assistant */}
-      <ProjectAIChat project={project} />
     </div>
   );
 };

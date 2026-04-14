@@ -4,6 +4,21 @@ import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 const ProjectCarousel = ({ projects, onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [cardSpacing, setCardSpacing] = useState(500);
+  const containerRef = React.useRef(null);
+  const cooldown = React.useRef(false);
+  const activeIndexRef = React.useRef(activeIndex);
+
+  useEffect(() => {
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const updateSpacing = () => setCardSpacing(window.innerWidth < 768 ? 320 : 500);
+    updateSpacing();
+    window.addEventListener("resize", updateSpacing, { passive: true });
+    return () => window.removeEventListener("resize", updateSpacing);
+  }, []);
 
   const handleNext = () =>
     setActiveIndex((prev) => (prev + 1) % projects.length);
@@ -18,9 +33,31 @@ const ProjectCarousel = ({ projects, onNavigate }) => {
       if (e.key === "ArrowRight") handleNext();
       if (e.key === "ArrowLeft") handlePrev();
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [projects.length]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      const atEnd = activeIndexRef.current === projects.length - 1 && e.deltaY > 0;
+      const atStart = activeIndexRef.current === 0 && e.deltaY < 0;
+
+      if (atEnd || atStart) return;
+
+      e.preventDefault();
+      if (cooldown.current) return;
+      cooldown.current = true;
+      setTimeout(() => { cooldown.current = false; }, 600);
+
+      if (e.deltaY > 0) handleNext();
+      else handlePrev();
+    };
+
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () => el.removeEventListener("wheel", handleWheel);
   }, [projects.length]);
 
   if (!projects || projects.length === 0) return null;
@@ -28,7 +65,7 @@ const ProjectCarousel = ({ projects, onNavigate }) => {
   const activeProject = projects[activeIndex];
 
   return (
-    <div className="relative w-full py-20 overflow-hidden">
+    <div ref={containerRef} className="relative w-full py-20 overflow-hidden">
       
       {/* Background Glow */}
       <AnimatePresence mode="wait">
@@ -101,9 +138,7 @@ const ProjectCarousel = ({ projects, onNavigate }) => {
               animate={{
                 scale: isActive ? 1.1 : 0.85,
                 opacity: isActive ? 1 : 0.3,
-                x:
-                  (index - activeIndex) *
-                  (window.innerWidth < 768 ? 320 : 500),
+                x: (index - activeIndex) * cardSpacing,
                 filter: isActive ? "blur(0px)" : "blur(4px)",
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Download, Globe, ChevronRight } from 'lucide-react';
 import { PROFILE, CORE_METRICS, PROJECTS } from '../constants';
@@ -19,24 +18,24 @@ const Home = ({ onNavigate }) => {
               </span>
               <span>Available for new projects</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
               Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-violet-500 to-pink-500">Future</span> of Web Performance.
             </h1>
-            
+
             <p className="text-xl text-zinc-400 max-w-xl leading-relaxed">
               {PROFILE.bio}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button 
+              <button
                 onClick={() => onNavigate('projects')}
                 className="group px-8 py-4 bg-white text-zinc-950 font-bold rounded-xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"
               >
                 Explore Projects
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </button>
-              <button 
+              <button
                 onClick={() => onNavigate('contact')}
                 className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-zinc-300 font-bold rounded-xl hover:bg-zinc-800 transition-all duration-300 flex items-center justify-center"
               >
@@ -72,7 +71,7 @@ const Home = ({ onNavigate }) => {
             <h2 className="text-sm font-black text-blue-500 uppercase tracking-widest">Selected Works</h2>
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Featured Projects</h3>
           </div>
-          <button 
+          <button
             onClick={() => onNavigate('projects')}
             className="text-zinc-400 hover:text-white flex items-center space-x-2 group"
           >
@@ -83,10 +82,10 @@ const Home = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.slice(0, 3).map((project) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              onClick={(id) => onNavigate(`case-${id}`)} 
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={(id) => onNavigate(`case-${id}`)}
             />
           ))}
         </div>
@@ -114,7 +113,7 @@ const Home = ({ onNavigate }) => {
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
             I'm currently accepting new freelance projects and full-time opportunities. Let's discuss your vision.
           </p>
-          <button 
+          <button
             onClick={() => onNavigate('contact')}
             className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-blue-600/20"
           >

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Calendar, Rocket, Code2, Coffee } from 'lucide-react';
 import { PROFILE, TIMELINE } from '../constants';
@@ -29,14 +28,14 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="order-1 lg:order-2">
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-violet-600 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
               <div className="aspect-square rounded-[3rem] overflow-hidden border-8 border-zinc-900 shadow-2xl relative z-10">
-                <img 
-                  src="https://picsum.photos/seed/portrait/800/800" 
-                  alt="Portrait" 
+                <img
+                  src="https://picsum.photos/seed/portrait/800/800"
+                  alt="Portrait"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
@@ -56,12 +55,12 @@ const About = () => {
           {TIMELINE.map((item, i) => (
             <div key={i} className="relative pl-12 md:pl-0">
               <div className="hidden md:block absolute left-1/2 -ml-px w-px h-full bg-zinc-800"></div>
-              
+
               <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="md:w-1/2 space-y-4">
-                  <div className={`glass p-8 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-colors relative`}>
+                  <div className="glass p-8 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition-colors relative">
                     <div className="absolute top-8 -left-14 md:-left-4 md:right-auto md:top-10">
-                       <div className="w-4 h-4 rounded-full bg-blue-500 border-4 border-zinc-950"></div>
+                      <div className="w-4 h-4 rounded-full bg-blue-500 border-4 border-zinc-950"></div>
                     </div>
                     <div className="text-blue-500 font-bold text-sm mb-2">{item.year}</div>
                     <h4 className="text-2xl font-bold text-white mb-1">{item.title}</h4>
@@ -100,10 +99,10 @@ const About = () => {
             </div>
           </div>
           <div className="aspect-video bg-zinc-950 rounded-3xl border border-zinc-800 overflow-hidden relative">
-             <img src="https://picsum.photos/seed/setup/800/450" className="w-full h-full object-cover opacity-60 grayscale" alt="Work Setup" />
-             <div className="absolute inset-0 flex items-center justify-center">
-               <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Workspace — 2024</span>
-             </div>
+            <img src="https://picsum.photos/seed/setup/800/450" className="w-full h-full object-cover opacity-60 grayscale" alt="Work Setup" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Workspace — 2024</span>
+            </div>
           </div>
         </div>
       </section>

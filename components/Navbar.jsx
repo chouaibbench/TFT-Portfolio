@@ -40,15 +40,12 @@ const Navbar = ({ currentView, onNavigate }) => {
           onClick={() => onNavigate("home")}
           className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity"
         >
-          ALEX<span className="text-blue-500">RIVERA</span>
+          BEN<span className="text-blue-500">CHOUAIB</span>
         </button>
-
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => {
             const active =
               item.id === "projects" ? isProjectsActive : currentView === item.id;
-
             return (
               <button
                 key={item.id}
@@ -62,26 +59,12 @@ const Navbar = ({ currentView, onNavigate }) => {
               </button>
             );
           })}
-
           <div className="h-4 w-[1px] bg-zinc-800" />
-
           <div className="flex items-center space-x-4">
-            <a
-              href={PROFILE.links.github}
-              className="text-zinc-400 hover:text-white transition-colors"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
+            <a href={PROFILE.links.github} className="text-zinc-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="GitHub">
               <Github size={18} />
             </a>
-            <a
-              href={PROFILE.links.linkedin}
-              className="text-zinc-400 hover:text-white transition-colors"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
+            <a href={PROFILE.links.linkedin} className="text-zinc-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <Linkedin size={18} />
             </a>
           </div>
@@ -105,50 +88,21 @@ const Navbar = ({ currentView, onNavigate }) => {
           {navItems.map((item) => {
             const active =
               item.id === "projects" ? isProjectsActive : currentView === item.id;
-
             return (
               <button
                 key={item.id}
                 type="button"
-                onClick={() => {
-                  onNavigate(item.id);
-                  setIsMobileMenuOpen(false);
-                }}
-                className={`text-lg font-medium text-left ${
-                  active ? "text-blue-500" : "text-zinc-400"
-                }`}
+                onClick={() => { onNavigate(item.id); setIsMobileMenuOpen(false); }}
+                className={`text-lg font-medium text-left ${active ? "text-blue-500" : "text-zinc-400"}`}
               >
                 {item.label}
               </button>
             );
           })}
-
           <div className="flex space-x-6 pt-4 border-t border-white/5">
-            <a
-              href={PROFILE.links.github}
-              className="text-zinc-400 hover:text-white"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href={PROFILE.links.linkedin}
-              className="text-zinc-400 hover:text-white"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href={`mailto:${PROFILE.links.email}`}
-              className="text-zinc-400 hover:text-white"
-              aria-label="Email"
-            >
-              <Mail size={20} />
-            </a>
+            <a href={PROFILE.links.github} className="text-zinc-400 hover:text-white" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20} /></a>
+            <a href={PROFILE.links.linkedin} className="text-zinc-400 hover:text-white" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+            <a href={`mailto:${PROFILE.links.email}`} className="text-zinc-400 hover:text-white" aria-label="Email"><Mail size={20} /></a>
           </div>
         </div>
       )}
