@@ -27,7 +27,7 @@ export const PROFILE = {
 
 export const CORE_METRICS = [
   { value: "2", suffix: "+", label: "Years Learning" },
-  { value: "2", suffix: "+", label: "Projects Shipped" },
+  { value: "3", suffix: "+", label: "Projects Shipped" },
   { value: "13", suffix: "+", label: "Technologies" },
   { value: "100", suffix: "%", label: "Passion" },
 ];
@@ -93,5 +93,28 @@ export const PROJECTS = [
     problem: "Users need a simple way to discover and explore movies.",
     solution: "A clean interface to browse and search about movies easily.",
     role: "Built the application using React and integrated a movie API.",
+  },
+  {
+    id: "3",
+    title: "FixFlow",
+    category: "Maintenance System",
+    themeColor: "violet-500",
+    description: "A worker portal for reporting machine breakdowns and tracking maintenance tickets in real time.",
+    longDescription: "FixFlow is a full-stack maintenance management system that allows factory workers to report machine failures by scanning QR codes, submit tickets, and monitor machine operational status — all from a clean dashboard.",
+    image: "/images/fixflow.png",
+    stack: ["React", "Laravel", "MySQL", "Tailwind CSS"],
+    links: {
+      live: "https://fixflow-production-4c0d.up.railway.app/login",
+      github: "https://github.com/chouaibbench",
+    },
+    metrics: [
+      { label: "Type", value: "Full-Stack App" },
+      { label: "Stack", value: "React + Laravel" },
+      { label: "Status", value: "In Progress" },
+      { label: "Year", value: "2026" },
+    ],
+    problem: "Factory workers had no efficient way to report machine breakdowns or track repair progress.",
+    solution: "A portal where workers scan machine QR codes to instantly report issues and follow ticket resolution in real time.",
+    role: "Designed and built the full-stack application — frontend with React, backend with Laravel and MySQL.",
   },
 ];
