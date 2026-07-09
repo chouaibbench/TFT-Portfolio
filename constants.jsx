@@ -104,8 +104,8 @@ export const PROJECTS = [
   image: "/images/cv.png",
   stack: ["React", "Vite", "Tailwind CSS", "shadcn/ui", "JavaScript"],
   links: {
-    live: "https://your-cv-builder-demo.com",
-    github: "https://github.com/yourusername/cv-builder",
+    live: "https://cv-generator-sandy-zeta.vercel.app/",
+    github: "https://github.com/chouaibbench/cv-generator",
   },
   metrics: [
     { label: "Project", value: "Portfolio Project" },
